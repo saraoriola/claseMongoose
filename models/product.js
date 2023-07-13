@@ -7,6 +7,11 @@ const ProductSchema = new mongoose.Schema({
     price: Number,
 }, { timestamps: true }); // createdAt and updatedAt
 
+// Add an index for the 'name' field to enable text search
+ProductSchema.index({
+    name: "text",
+});
+
 // Create a model using the schema, which represents the 'Product' collection in the database
 const Product = mongoose.model('Product', ProductSchema);
 

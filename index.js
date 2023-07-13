@@ -12,7 +12,8 @@ const PORT = 3000;
 // Establish the connection with the database
 dbConnection();
 
-app.use(express.json()) // Parsea el middleware
+// Middleware to parse JSON in the request body
+app.use(express.json());
 
 // Use the '/products' route for product-related operations
 app.use('/products', require('./routes/products'));
